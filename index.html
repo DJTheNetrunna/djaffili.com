@@ -1,198 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Curated product recommendations and deals." />
-  <title>Top Picks | Product Recommendations</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find compatible laptop repair tools, SSD upgrades, and drive migration gear at DJAffili.">
+  <title>PC Repair Tools &amp; SSD Upgrades | DJAffili</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root { --bg: #101722; --surface: #182333; --text: #eff5ff; --muted: #acbad0; --border: #34455d; --amazon: #7bead2; }
+    .site-header { background: #101722; border-bottom: 1px solid var(--border); position: static; }
+    .nav { height: auto; min-height: 66px; gap: 1rem; flex-wrap: wrap; padding-block: .6rem; }
+    .shop-nav { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    .hero { padding: clamp(3rem, 9vw, 7rem) 0; background: radial-gradient(ellipse at right top,#164443,transparent 65%),#111b2a; }
+    .hero h1 { max-width: 15ch; font-size: clamp(2.65rem, 9vw, 5.75rem); }
+    .shop-section { padding-block: 2.5rem; }
+    .shop-section h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin: 0 0 1rem; }
+    .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 1rem; }
+    .gear { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); padding: clamp(1.1rem, 3vw, 1.7rem); }
+    .gear h3 { margin: 0; font-size: 1.36rem; }
+    .gear p { color: var(--muted); margin: .55rem 0 1rem; }
+    .gear strong { color: var(--text); }
+    .gear a { color: var(--amazon); text-decoration: underline; margin-top: auto; width: fit-content; }
+    a:focus-visible { outline: 3px solid #f4c875; outline-offset: 4px; }
+    .shop-disclosure { padding: 1rem 0; background: var(--surface); border-block: 1px solid var(--border); }
+    .shop-disclosure p { margin: 0; }
+    footer { padding: 1.4rem 0; border-top: 1px solid var(--border); color: var(--muted); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .primary-btn { transition: none; } }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="#" class="logo">Top<span>Picks</span></a>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#products">Products</a>
-        <a href="#categories">Categories</a>
-        <a href="#about">About</a>
+      <a class="logo" href="./">DJ<span>Affili</span></a>
+      <nav class="shop-nav" aria-label="Main">
+        <a href="#gear">Shop gear</a>
+        <a href="#drive-guide">SSD compatibility</a>
       </nav>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
   </header>
-
   <main>
     <section class="hero">
-      <div class="container hero-content">
-        <div>
-          <span class="eyebrow">SMART SHOPPING STARTS HERE</span>
-          <h1>Find products worth buying.</h1>
-          <p>
-            Hand-picked recommendations for tech, home, gaming, and everyday essentials.
-          </p>
-          <a class="primary-btn" href="#products">Browse top picks</a>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-badge">Featured Pick</div>
-          <div class="hero-icon">🎧</div>
-          <h3>Wireless Headphones</h3>
-          <p>Comfortable, portable, and great for daily listening.</p>
-          <a href="YOUR_AMAZON_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">
-            View on Amazon →
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="disclosure">
       <div class="container">
-        <p>
-          <strong>Affiliate Disclosure:</strong>
-          As an Amazon Associate, this site may earn from qualifying purchases.
-        </p>
+        <h1>Gear for fixing and upgrading your PC.</h1>
+        <p>Find the right driver bit, match an SSD to your motherboard, or connect an old drive over USB.</p>
+        <a class="primary-btn" href="#gear">Browse repair and upgrade gear</a>
       </div>
     </section>
-
-    <section class="section" id="categories">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">SHOP BY CATEGORY</span>
-            <h2>Popular categories</h2>
-          </div>
-        </div>
-
-        <div class="category-grid">
-          <button class="category-card active" data-category="all">✨ All Products</button>
-          <button class="category-card" data-category="tech">💻 Tech</button>
-          <button class="category-card" data-category="gaming">🎮 Gaming</button>
-          <button class="category-card" data-category="home">🏠 Home</button>
-          <button class="category-card" data-category="fitness">🏋️ Fitness</button>
-        </div>
+    <aside class="shop-disclosure" aria-label="Affiliate disclosure">
+      <p class="container">As an Amazon Associate I earn from qualifying purchases.</p>
+    </aside>
+    <section class="container shop-section" id="gear" aria-labelledby="gear-title">
+      <h2 id="gear-title">Repair and upgrade gear</h2>
+      <div class="gear-grid">
+        <article class="gear">
+          <span class="eyebrow">Repair tools</span>
+          <h3>iFixit Mako Driver Kit</h3>
+          <p>For removing small fasteners on laptops and electronics.</p>
+          <p><strong>Before you buy.</strong> Match the exact bit to the screw before applying pressure. Check your device’s repair guide for any specialty tools or opening picks.</p>
+          <a href="https://www.amazon.com/iFixit-IF145-299-4-Driver-Bit-64pc/dp/B0189YWOIO?&amp;linkCode=ll2&amp;tag=djaffili-20&amp;linkId=e2bad97daf8c2619d116443cac29c13c&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored">View on Amazon (paid link)</a>
+          <a href="https://www.ifixit.com/products/mako-driver-kit-64-precision-bits">Manufacturer details</a>
+        </article>
+        <article class="gear">
+          <span class="eyebrow">NVMe storage</span>
+          <h3>Samsung 990 EVO Plus 1TB</h3>
+          <p>For adding internal storage to a PC with a compatible M.2 NVMe slot.</p>
+          <p><strong>Before you buy.</strong> Confirm NVMe support and clearance in your system’s manual. Back up the original drive before migrating it.</p>
+          <a href="https://www.amazon.com/Samsung-Technology-Intelligent-Turbowrite-MZ-V9S1T0B/dp/B0DHLFWBQ1?th=1&amp;linkCode=ll2&amp;tag=djaffili-20&amp;linkId=828c5e4254d842c2267eeb2ee1829c02&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored">View on Amazon (paid link)</a>
+          <a href="https://www.samsung.com/us/memory-storage/nvme-ssd/990-evo-plus-gen4-nvme-ssd-1tb-sku-mz-v9s1t0b-am/">Manufacturer details</a>
+        </article>
+        <article class="gear">
+          <span class="eyebrow">SATA storage</span>
+          <h3>Crucial BX500 1TB</h3>
+          <p>For upgrading an older PC with a 2.5-inch SATA drive bay.</p>
+          <p><strong>Before you buy.</strong> Verify the bay and SATA connection. Some desktops need a mounting bracket, data cable, and available SATA power.</p>
+          <a href="https://www.amazon.com/Crucial-BX500-NAND-2-5-Inch-Internal/dp/B07YD579WM?th=1&amp;linkCode=ll2&amp;tag=djaffili-20&amp;linkId=e2a738671e6fc88e2aa2540328bdf40b&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored">View on Amazon (paid link)</a>
+          <a href="https://www.crucial.com/content/dam/crucial/ssd-products/bx500/flyer/b2c/crucial-bx500-b2c-product-flyer-en.pdf">Manufacturer specs (PDF)</a>
+        </article>
+        <article class="gear">
+          <span class="eyebrow">Drive migration</span>
+          <h3>Sabrent EC-SNVE enclosure</h3>
+          <p>For connecting a compatible M.2 NVMe or SATA SSD over USB.</p>
+          <p><strong>Before you buy.</strong> Check the supported M.2 sizes and protocols before ordering. This enclosure is for M.2 drives, so a 2.5-inch SATA drive needs a different adapter.</p>
+          <a href="https://www.amazon.com/Sabrent-Type-C-Tool-Free-Enclosure-EC-SNVE/dp/B08RVC6F9Y?th=1&amp;linkCode=ll2&amp;tag=djaffili-20&amp;linkId=68a4892951932836daf30a955341c2b9&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored">View on Amazon (paid link)</a>
+          <a href="https://sabrent.com/collections/nvme-enclosures/products/ec-snve">Manufacturer details</a>
+        </article>
       </div>
     </section>
-
-    <section class="section products-section" id="products">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">RECOMMENDED</span>
-            <h2>Top product picks</h2>
-          </div>
-
-          <input
-            type="search"
-            id="searchInput"
-            class="search"
-            placeholder="Search products..."
-            aria-label="Search products"
-          />
-        </div>
-
-        <div class="product-grid" id="productGrid">
-          <article class="product-card" data-category="tech" data-name="wireless earbuds">
-            <div class="product-image">🎧</div>
-            <div class="product-body">
-              <span class="tag">Tech</span>
-              <h3>Wireless Earbuds</h3>
-              <p>Compact earbuds with a charging case for music, calls, and travel.</p>
-              <a class="amazon-btn" href="YOUR_AMAZON_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">
-                View on Amazon
-              </a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="gaming" data-name="gaming mouse">
-            <div class="product-image">🖱️</div>
-            <div class="product-body">
-              <span class="tag">Gaming</span>
-              <h3>Gaming Mouse</h3>
-              <p>A responsive mouse designed for fast movement and comfortable sessions.</p>
-              <a class="amazon-btn" href="YOUR_AMAZON_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">
-                View on Amazon
-              </a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="home" data-name="smart led light">
-            <div class="product-image">💡</div>
-            <div class="product-body">
-              <span class="tag">Home</span>
-              <h3>Smart LED Light</h3>
-              <p>Easy ambient lighting for bedrooms, offices, gaming setups, and more.</p>
-              <a class="amazon-btn" href="YOUR_AMAZON_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">
-                View on Amazon
-              </a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="fitness" data-name="fitness tracker">
-            <div class="product-image">⌚</div>
-            <div class="product-body">
-              <span class="tag">Fitness</span>
-              <h3>Fitness Tracker</h3>
-              <p>Track everyday activity, workouts, and basic wellness metrics on the go.</p>
-              <a class="amazon-btn" href="YOUR_AMAZON_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">
-                View on Amazon
-              </a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="tech" data-name="portable charger power bank">
-            <div class="product-image">🔋</div>
-            <div class="product-body">
-              <span class="tag">Tech</span>
-              <h3>Portable Charger</h3>
-              <p>A travel-friendly power bank for keeping phones and small devices charged.</p>
-              <a class="amazon-btn" href="YOUR_AMAZON_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">
-                View on Amazon
-              </a>
-            </div>
-          </article>
-
-          <article class="product-card" data-category="home" data-name="desk lamp">
-            <div class="product-image">🛋️</div>
-            <div class="product-body">
-              <span class="tag">Home</span>
-              <h3>Desk Lamp</h3>
-              <p>Simple lighting for study spaces, home offices, and bedside tables.</p>
-              <a class="amazon-btn" href="YOUR_AMAZON_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">
-                View on Amazon
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <p class="empty-state" id="emptyState">No products found.</p>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <div class="container about-card">
-        <div>
-          <span class="eyebrow">ABOUT THIS SITE</span>
-          <h2>Simple recommendations, all in one place.</h2>
-        </div>
-        <p>
-          This website shares curated product suggestions to help visitors discover useful items.
-          Product availability and prices can change on Amazon.
-        </p>
-      </div>
+    <section class="container shop-section" id="drive-guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">Which SSD fits your PC?</h2>
+      <ol>
+        <li>Find the exact model of your laptop or motherboard and look up its storage specifications.</li>
+        <li>Check the interface. A 2.5-inch SATA bay uses a different connection than an M.2 slot. An M.2 slot can support NVMe, SATA, or both depending on the system.</li>
+        <li>Check physical fit. Match the M.2 length or confirm space for a 2.5-inch drive. For an enclosure, match both the length and protocol of the drive you already have.</li>
+        <li>Back up your files and decide whether you’ll clone the existing drive or install your operating system from scratch.</li>
+      </ol>
     </section>
   </main>
-
-  <footer>
-    <div class="container footer-content">
-      <p>© <span id="year"></span> TopPicks. All rights reserved.</p>
-      <p>Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer><div class="container">DJAffili · PC repair and upgrade buying guides</div></footer>
 </body>
 </html>
